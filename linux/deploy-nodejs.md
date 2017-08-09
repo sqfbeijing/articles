@@ -3,7 +3,7 @@
 ### 使用mac终端连接阿里云centos服务器
 
 ```
-ssh root@47.93.227.194
+ssh root@你的服务器公网IP
 root@你的服务器公网IP's password: 
 Last login: Wed Aug  9 09:04:30 2017 from 36.110.*.*
 
