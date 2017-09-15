@@ -38,6 +38,6 @@ Array原型上的map等方法，是期望一个可以迭代的、具有非空的
 
 ### 相关链接
 
-[https://stackoverflow.com/questions/28416547/difference-between-array-applynull-arrayx-and-arrayx](https://stackoverflow.com/questions/28416547/difference-between-array-applynull-arrayx-and-arrayx)
-[https://cn.vuejs.org/v2/guide/render-function.html#约束](https://cn.vuejs.org/v2/guide/render-function.html#约束)
+* [https://stackoverflow.com/questions/28416547/difference-between-array-applynull-arrayx-and-arrayx](https://stackoverflow.com/questions/28416547/difference-between-array-applynull-arrayx-and-arrayx)
+* [https://cn.vuejs.org/v2/guide/render-function.html#约束](https://cn.vuejs.org/v2/guide/render-function.html#约束)
 
