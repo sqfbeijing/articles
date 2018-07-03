@@ -4,7 +4,11 @@
 
 官方: `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]`
 
+* npm version 0.0.1-beta17   任意版本=>v0.0.1-beta17   
+
 * npm version prerelease ` "version": "1.0.5"  =>  "version": "1.0.5-2"  `
+
+  > 开发阶段,可以用 "version": "0.0.5-beta15" => "version": "0.0.5-beta16" 这样
 
 * npm version patch   ` "version": "1.0.5"  =>  "version": "1.0.6"  `
 
@@ -37,6 +41,8 @@
 
 
 ## update
+
+>一般我们用npm 的话, 直接npm i packageName  这样就可以直接安装最新的包了, npm update用的比较少，不如直接npm install 来的方便。 yarn 除外, yarn 貌似要自己 yarn upgrade packageName@2.3.2 这样。
 
 * package.json中 ` "commander": "^2.15.1"`   npm update  变为  =>  `"commander": "^2.89.1"` '^'代表当前大版本之内，会更新到 : 比如当前大版本是2， 则更新到第2 版最新的包， 2.89.1下一版本就是3.x.x了。
 
@@ -99,4 +105,4 @@ added 1 package in 0.756s
 
 > 解决办法,先把最外层的package.json改为 package.json1121,  然后在内层包进行npm link, 然后再改回原来名字。
 >
-> 如果link有改动,需要重新npm start.否则缓存的是原来的文件
+> 如果link有改动,需要重新npm start.否则缓存的是原来的文件 （或者尝试先将 import 语句注释掉,然后再import来解决）

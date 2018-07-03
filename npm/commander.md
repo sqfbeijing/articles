@@ -54,7 +54,7 @@ commander
 const isBig = commander.big
 const addType = commander.add
 console.log(isBig, addType)
-//terminal *注意：--add pear === --add 'pear' === --add=pear === -a pear*
+//terminal 注意：--add pear === --add 'pear' === --add=pear === -a pear
 // 而 -a=peer在命令行中的写法是错误的
 shaoqianfeideMacBook-Pro:wqw shaoqianfei$ node cm.js -b --add pear
 true 'pear'

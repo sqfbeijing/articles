@@ -1,0 +1,11 @@
+* moment()
+* moment.unix
+* moment.unix(unixDateStart).format(initFormat)
+* moment.duration
+* diff
+* asDays
+* add
+* startOf
+* isValid
+* 'YYYY-MM-DD'
+* 'MM-DD(ddd)'

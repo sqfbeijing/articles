@@ -16,7 +16,7 @@ function setUrl(page){
     var url = location.pathname + '?page=' +  page
     var state = { 'page_id': 1, 'user_id': 5 };
     var title = 'Hello World';
-	history.pushState(state, title, url);
+	history.pushState(state, title, url);//一般history.pushState({}, '', url)也行
 }
 ```
 
