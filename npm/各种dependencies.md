@@ -29,3 +29,12 @@ console.log("上午11:06:36", $, $('body'))
 ### 项目使用
 
 并且,我看我现在的项目 `babel eslint husky`是放在 `devDependencies`中的，然而在 create-react-app使用上,  npm run eject 之后, 能看到 ``babel eslint` 是放在 `dependencies`中的,  说明其实放到`dependencies` 和 `` `devDependencies` 区别只是 让开发者能够辨别  哪些是包主要是用于开发的时候，哪些是无论如何都需要的很重要的包。 二者最终都会打包的。
+
+
+
+### optionalDependencies
+
+### peerDependencies
+
+
+

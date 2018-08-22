@@ -25,6 +25,16 @@ echo $HOME
 /Users/shaoqianfei
 ```
 
+**特例**
+
+如果你安装了 zsh 这样的工具, 设置环境变量就需要在 
+
+```js
+/Users/shaoqianfei/.zshrc
+```
+
+而非 `/Users/shaoqianfei/.bash_profile ` 中了， 我亲测 export SHIPIT_USER=YOUR_SSH_USERNAME    在.bash_profile 中设置不行, 而.zshrc中设置就可以。
+
 ### host文件
 
 ```shell
