@@ -170,7 +170,7 @@ http {
 
 > /etc/nginx/conf.d/captain.conf,     被导入的配置文件
 >
-> 如果 `URI` 匹配多个 `location` 块，Nginx 采用**最长前缀匹配原则**
+> 如果 `URI` 匹配多个 `location` 块，Nginx 采用**最长前缀匹配原则**
 
 ```nginx
 server {
@@ -232,6 +232,14 @@ server {
   }
 }
 ```
+**路由正则表达式**    
+正则表达式以`~`开头，并空一格。如果一个uri，正则表达式与普通路由都匹配成功，那么优先级: 正则表达式 > 普通路由
+
+```nginx
+location ~ \.(gif|jpg|png)$ {
+    root /data/images;
+}
+```
 
 ### 相关链接
 
@@ -246,6 +254,3 @@ server {
 [http://nginx.org/en/docs/beginners_guide.html](http://nginx.org/en/docs/beginners_guide.html)
 
 [https://zhuanlan.zhihu.com/p/24524057?refer=wxyyxc1992](https://zhuanlan.zhihu.com/p/24524057?refer=wxyyxc1992)
-
-
-
