@@ -69,6 +69,9 @@ moment().format('DD') // "07"
 moment().format('X') // "1531298699"   UNIX时间戳
 moment().format('x') // "1531298701354"
 
+moment().format('YYYY-MM-DD HH:mm:ss') // "1970-01-01 14-00-00"   
+moment().format('YYYY-MM-DD hh:mm:ss') // "1970-01-01 2-00-00"   
+
 ```
 
 
@@ -78,6 +81,8 @@ moment().format('x') // "1531298701354"
 **秒**
 
 > moment.unix() 返回一个moment对象, unix方法需要传入一个number类型的 秒 值
+>
+> moment.unix(unixDate)  相当于moment(unixDate, 'X')
 
 ```js
 var day = moment.unix(1318781876.721).format('YYYY MM-DD') // "2011 10-17"
@@ -85,6 +90,14 @@ moment.unix(1531298699).format('LLL') // "2018年7月11日下午4点44分"
 ```
 
 
+
+```
+//以下两个貌似没啥区别
+a = moment.unix(1531298699)
+a1 = moment.unix(1531298699, 'YYYY-MM-DD')
+```
+
+### format
 
 ```js
 moment().format('L');    // 2018-07-12

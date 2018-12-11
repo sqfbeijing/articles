@@ -15,7 +15,7 @@ brew install nginx
 ```js
 If you need to have this software first in your PATH run:
   echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.zshrc
- // index.html 在  /usr/local/var/www; 
+ // index.html 在  /usr/local/var/www
  Docroot is: /usr/local/var/www
 
 // 端口配置 在 /usr/local/etc/nginx/nginx.conf
@@ -64,8 +64,8 @@ Nginx有一个主线程(master process)和几个工作线程(worker process), **
 
 ### 基本命令
 
-```js
-nginx  // 启动nginx, 此时不会提示任何东西， 打开 http://127.0.0.1:8080/ 即可
+```
+nginx  // 启动nginx
 ```
 
 nginx启动之后，可以使用以下命令:
@@ -188,20 +188,6 @@ server {
     root /data/apps/captain/dist/;
     # 尝试寻找匹配 uri 的文件，没找到直接返回root映射的文件夹下的index.html, 再没找到则直接返回 404
     try_files $uri $uri/ /$uri index.html /index.html =404;
-	# 限制ip 访问,亲测有效; 允许10-200的ip访问,排除100和其他的; deny 的ip 访问会显示403界面
-	deny  192.168.1.100;
-	allow 192.168.1.10/200;
-	allow 10.110.50.16;
-	deny  all;
-	# proxy_pass https://cnodejs.org; 若此处写成这样，则访问http://127.0.0.1:8080/ 会直接展示https://cnodejs.org 的界面
-    # 移动、pc设备适配; 原理: nginx 监听UA，若是移动设备则重定向到 h5站点
-    if ($http_user_agent ~* '(Android|webOS|iPhone|iPod|BlackBerry)') {
-        set $mobile_request '1';
-     }
-    if ($mobile_request = '1') {
-         # 不同于 proxy_pass,  rewrite 会进行302重定向
-         rewrite ^.+ http://mysite-base-H5.com;
-     }
   }
 
 }
@@ -225,11 +211,6 @@ server {
      # Node.js 在 9010 开了一个监听端口, 代理请求到此服务
     proxy_pass http://localhost:9010;
   }
-
-   #请求跨域
-  location /api {
-    proxy_pass https://cnodejs.org;
-  } 
 
   location /trends/download {
     proxy_pass http://localhost:9010;
@@ -273,5 +254,3 @@ location ~ \.(gif|jpg|png)$ {
 [http://nginx.org/en/docs/beginners_guide.html](http://nginx.org/en/docs/beginners_guide.html)
 
 [https://zhuanlan.zhihu.com/p/24524057?refer=wxyyxc1992](https://zhuanlan.zhihu.com/p/24524057?refer=wxyyxc1992)
-
-[掘金:高品质博文](https://juejin.im/post/5bacbd395188255c8d0fd4b2)
