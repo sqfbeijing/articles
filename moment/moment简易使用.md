@@ -36,24 +36,17 @@
 
 
 
-#### 当前时间
-
-> 获取当前时间
+#### 通过当前时间获得moment对象
 
 ```js
 moment();
 ```
 
-```
-var now = moment();
-```
-
-
-
-#### Unix 偏移量（毫秒）
+#### 通过Unix 时间戳（毫秒）获得moment对象 
 
 ```
 moment(Number);
+moment(1551841019666).valueOf() // 1551841019666
 ```
 
 ```js
@@ -61,9 +54,7 @@ const time = Date.now()
 moment(time).toArray() // [2018, 9, 11, 18, 22, 4, 726]
 ```
 
-
-
-#### Unix 时间戳（秒）
+#### 通过Unix 时间戳（秒）获得moment对象
 
 ```
 moment.unix(Number)
@@ -74,13 +65,23 @@ const time = Date.now()
 moment.unix(Math.floor(time / 1000)).toArray() // [2018, 9, 11, 18, 22, 4, 0]
 ```
 
+#### 通过moment对象获得Unix 时间戳（毫秒）
 
+```
+moment().valueOf() // 1551839106211
+moment().format('x'); // "1551838972324"
+```
+
+#### 通过moment对象获得Unix 时间戳（秒）
+
+```
+moment().unix() // 1551841372
+moment().format('X'); // "1551841379"
+```
 
 
 
 ### 操作
-
-
 
 #### 加法 ####
 
