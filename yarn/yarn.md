@@ -10,5 +10,7 @@ https://yarnpkg.com/lang/zh-hans/
 
 `yarn upgrade less@1.8.8`  
 
-
+```
+yarn global add create-react-app --prefix /usr/local
+```
 

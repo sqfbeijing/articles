@@ -69,14 +69,14 @@ moment.unix(Math.floor(time / 1000)).toArray() // [2018, 9, 11, 18, 22, 4, 0]
 
 ```
 moment().valueOf() // 1551839106211
-moment().format('x'); // "1551838972324"
+moment().format('x'); // "1551839106211"
 ```
 
 #### 通过moment对象获得Unix 时间戳（秒）
 
 ```
 moment().unix() // 1551841372
-moment().format('X'); // "1551841379"
+moment().format('X'); // "1551841372"
 ```
 
 

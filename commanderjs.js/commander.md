@@ -102,7 +102,3 @@ remove foo recursively
   shaoqianfeideMacBook-Pro:wqw shaoqianfei$ node cm.js a mike
   'mike'
   ```
-
-  
-
-  
