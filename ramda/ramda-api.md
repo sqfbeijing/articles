@@ -1,3 +1,20 @@
+### 常用方法
+
+```js
+R.once //只执行一次
+R.clone //深克隆
+R.isNil // 检查数据为null/undefined
+R.isEmpty // 检查数据是否是空对象/数组/字符串
+R.path // 安全地获取数据
+R.pathOr // 安全地获取数据并赋予初始值
+R.assocPath //修改对象上的属性(无副作用，可深度修改)
+R.mapObjIndexed //让对象也能像数组那样map
+R.omit //删除对象上的某些属性
+R.pick // 返回仅包含指定属性的对象
+R.pickBy // 返回仅包含指定属性的对象,按照指定函数返回
+... 
+```
+
 ### List 
 
 ```js
@@ -36,10 +53,6 @@ R.pluck('val', [{val:1, name: 'a'}, {val:2, name: 'b'}])
 
 R.pluck('val', {a: {val:1, name: 'a'}, b: {val:2, name: 'b'}}) 
 // => {a:1, b:2}
-
-
-
-
 
 R.groupBy(item => item > 0 ? 'Y' : 'N', [-2,3,21,-3])
 // => {N: [-2, -3], Y:[3, 21]}
