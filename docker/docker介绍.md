@@ -62,7 +62,7 @@ docker container prune // 清理掉所有处于终止状态的容器
 docker container stop webserver // webserver是容器名
 docker run -d -p 5000:5000 training/webapp python app.py //-p : 是容器内部端口绑定到指定的主机端口。
 
-#标签
+# 标签
 docker tag 860c279d2fec runoob/centos:dev // ID为860c279d2fec的镜像多设置一个dev标签
 
 # 网络
@@ -103,6 +103,16 @@ CMD     /usr/sbin/sshd -D
   docker run -t -i sqf/centos:6.7  /bin/bash
   ```
 
+### 清理
+
+> https://note.qidong.name/2017/06/26/docker-clean/
+
+```js
+docker image prune // 清理所有悬挂（<none>）镜像：
+docker container prune  // 清理所有停止运行的容器：
+docker volume prune //清理所有无用数据卷：
+```
+
 ## hone
 
 ```
@@ -113,15 +123,9 @@ docker build -t hone:v1 . //构建镜像
 
 ```
 
-
-
-
-
 ### 相关文档
 
 https://docs.docker.com/docker-for-mac/
-
-
 
 ### 我的账户 
 
