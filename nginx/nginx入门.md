@@ -79,6 +79,8 @@ nginx启动之后，可以使用以下命令:
 * `reload`  重新加载配置文件，当你修改了 nginx配置文件，则需要执行此命令 来重新加载配置文件, 如果配置文件格式正确，nginx会关闭当前的旧的工作线程，并开启新的工作线程
 * `reopen` 重新打开日志文件
 
+`/usr/local/nginx/sbin/nginx -t`  #检查配置文件
+
 ### 配置文件
 
 **构成:**
@@ -259,6 +261,10 @@ location ~ \.(gif|jpg|png)$ {
     root /data/images;
 }
 ```
+
+### 常见case
+
+通常执行命令如果全局没有的话往往在 `/usr/local/nginx/sbin/nginx`
 
 ### 相关链接
 
