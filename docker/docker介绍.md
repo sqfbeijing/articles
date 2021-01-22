@@ -35,8 +35,6 @@ docker run -it ubuntu bash
 root@bb434a0a3414:/# ls
 ```
 
-
-
 ### 命令
 
 ```js
@@ -48,18 +46,22 @@ docker images // 查看所有镜像 或者 docker image ls
 
 docker ps // 查看容器
 docker ps -a // 查看所有容器
+docker ps -a|grep xxxx // 过滤指定容器
 docker container ls -a // 查看所有容器
 docker stop 2312b // 停止容器
 docker start b750bbbcfd88  // 启动一个已停止的容器
 docker restart b750bbbcfd88 //  启动一个已停止的容器
+docker restart fe-antd-orderadmin // 通过服务名重启
 docker run -it ubuntu /bin/bash //  -i: 交互式操作  -t: 终端 
 root@ed09e4490c57:/# exit  // 退出终端
 docker run -itd --name ubuntu-test ubuntu /bin/bash // 后台运行 --name指定容器名字
 docker exec -it 243c32535da7 /bin/bash //加了 -d 参数默认不会进入容器，想要进入容器需要使用指令 docker exec, 推荐使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止
 docker export 1e560fca3906 > ubuntu.tar // 导出容器快照到本地文件
+docker rm 7d1e8b71b79b // 通过容器ID删除，删除前请先停止
 docker rm -f 1e560fca3906 // 删除容器
 docker container prune // 清理掉所有处于终止状态的容器
 docker container stop webserver // webserver是容器名
+docker cp 7d1e8b71b79b:/app/xxxx ./  // 拷贝docker文件
 docker run -d -p 5000:5000 training/webapp python app.py //-p : 是容器内部端口绑定到指定的主机端口。
 
 # 标签
@@ -68,10 +70,22 @@ docker tag 860c279d2fec runoob/centos:dev // ID为860c279d2fec的镜像多设置
 # 网络
  docker network ls // 查看网络
  docker network create -d bridge test-net // 创建网络
-
+# 侦测
+docker inspect 65456712(镜像的id号) // 查看镜像版本等信息
 ```
 
+### docker ps字段意思
 
+```
+字段说明：
+CONTAINER ID 容器ID
+IMAGE 镜像仓库
+COMMAND 执行启动命令
+CREATED 第一次创建容器到现在到时长
+STATUS 容器状态（运行时长或者退出状态 exitd）
+PORTS 端口信息
+NAMES 容器名字（通常和服务名一致）
+```
 
 ### 创建镜像
 
@@ -126,6 +140,8 @@ docker build -t hone:v1 . //构建镜像
 ### 相关文档
 
 https://docs.docker.com/docker-for-mac/
+
+https://thoughts.aliyun.com/sharespace/5e86a419546fd9001aee81f2/docs/5fd970a05c1038001fc761ea?spm=a2cl9.flow_devops2020_goldlog_detail.0.0.2e2132e4WtbtqI  阿里云效:镜像构建缓慢—从海外下载基础镜像
 
 ### 我的账户 
 
